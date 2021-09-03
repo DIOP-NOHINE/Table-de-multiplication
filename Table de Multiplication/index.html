@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Table de Multiplication</title>
+</head>
+
+<body>
+
+    <u>
+        <h1 align="center">TABLE DE MULTIPLICATION</h1>
+    </u>
+    <!-- input -->
+    <div style="text-align: center;">
+        <button onclick="diminuer()">-</button> <input type="number" id="input"> <button
+            onclick="augmenter()">+</button><br>
+        <input type="button" value="CALCULER" onclick="getinfo()" id="A">
+        <input type="button" value="EFFACER" onclick="clearTheTable()" id="clear">
+    </div>
+    <!-- output -->
+
+    <center>
+        <div id="affiche" style="background-color:white;text-align: center;color: black; width: 350px;"> </div>
+    </center>
+
+
+
+    <script>
+
+        function getinfo() {
+            var input = document.getElementById("input").value;
+            var clear = document.getElementById("clear");
+
+            if (input < 0) {
+                //  document.getElementById("inpute").disabled=true;
+                //  alert("impossible de calculer avec des nombres négatif !!! veuillez saisir un nombre positive");
+                //    inpute.disabled=true;
+
+                // eleman.setAttribute("disabled", false);
+                //   eleman.setAttribute("editable", true);
+
+            } else {
+                document.getElementById("affiche").innerHTML = "";
+                for (var i = 0; i <= 10; i++) {
+                    var resultat = document.getElementById("input").value * i;
+                    //  output.innerHtml +=resultat;
+                    document.getElementById("affiche").innerHTML += input + " " + "x" + " " + i + " " + "=" + " " + resultat + "<br> <hr>";
+                }
+
+            }
+
+        }
+        function diminuer() {
+            var valeur = (document.getElementById("input").value);
+            valeur--;
+            
+            if (valeur < 0) {
+                document.getElementById("input").value = valeur;
+                document.getElementById("A").disabled = true;
+                document.getElementById("affiche").innerHTML = "impossible de calculer avec des nombres négatif !!! veuillez saisir un nombre positive";
+            }else{
+                document.getElementById("input").value = valeur;
+            }
+        }
+        function augmenter() {
+            var valeur = document.getElementById("input").value;
+            valeur++;
+            document.getElementById("input").value = valeur;
+            if (valeur > 0) {
+                document.getElementById("A").disabled = false;
+               
+            }
+        }
+        function clearTheTable() {
+            document.getElementById("affiche").innerHTML = "";
+            document.getElementById("input").value("");
+        }
+    </script>
+</body>
+
+</html>

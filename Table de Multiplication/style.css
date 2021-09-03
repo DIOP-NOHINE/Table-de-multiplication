@@ -1,0 +1,38 @@
+body{
+     background-color: brown; 
+    /* background-image:url("backMath.jpg") ; */
+}
+input{
+    height: 44px;
+    font-size: 20px;
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    margin-top: 10px;
+    width: 150px;
+    text-align: center;
+    box-shadow: 4px 5px  white;
+    
+}
+
+h1{
+ 
+  color: white; 
+
+} 
+ #affiche{
+ margin-top: 50px;
+font-size: 20px;
+font-weight: bold;
+width: 90%;
+font-size: 22px;
+box-sizing: border-box;
+box-shadow: 10px 10px  black;
+border-radius: 25px;
+    
+    
+} 
+button{
+    border-radius: 5px;
+ 
+}

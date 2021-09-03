@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Multiplication</title>
+    <script type="text/javascript">
+		 
+		function table_multiplication(nombre)
+		{
+
+		var i;
+        nombre = Number(document.getElementById("nbr1").value);
+        if(nombre<0){
+            alert('impossible de calculer avec des nombres négatif');
+        }
+        else{
+
+        
+		for (i=1; i<=10; i++) {
+		    resultat=nombre*i;
+            document.getElementById('resu').innerHTML+=nombre+" x "+i+"="+(nombre*i)+"<br>";
+			        }
+                }
+		}	
+       
+        table_multiplication();	
+        function diminuer(){
+            var valeur=document.getElementById('nbr1').value;
+            valeur--;
+            document.getElementById('nbr1').value=valeur;
+        }		  
+        function augmenter(){
+            var valeur=document.getElementById('nbr1').value;
+            valeur++;
+            document.getElementById('nbr1').value=valeur;
+        }		
+        
+        function effacer(){
+            document.getElementById('resu').innerHTML='';
+        }
+		
+		
+	</script>
+</head>
+<body>
+  <center> 
+  
+  <button type="" onclick="diminuer()">-</button>  <input type="number" id="nbr1">  <button onclick="augmenter()">+</button> <br>
+ <button onclick="effacer()" value="effacer">Effacer</button> <input type="submit" onclick="table_multiplication()" value="Calculer" >
+        <div id="resu">
+
+        </div>
+ 
+</center>
+</body>
+</html>
